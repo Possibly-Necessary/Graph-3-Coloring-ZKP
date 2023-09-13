@@ -14,7 +14,7 @@ Reference book(s):
 
 Testing the program: the following graph, represented in an adjacency matrix, is the common input for both the prover and verifier. This particular graph is three-colorable.
 
-  ![Graph-COLOR(1)](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/c51b7ec2-68e7-485f-851d-08869f285d04)
+        ![Graph-COLOR(1)](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/c51b7ec2-68e7-485f-851d-08869f285d04)
 
                       [0 1 0 0 1 1 0 0 0 1]
                       [1 0 1 0 0 1 1 0 0 0]
