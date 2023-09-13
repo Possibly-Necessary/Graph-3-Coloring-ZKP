@@ -13,9 +13,8 @@ Reference book(s):
   - "Mastering Concurrency in Go" by Nathan Kozyra
 
 Testing the program: the following graph, represented in an adjacency matrix, is the common input for both the prover and verifier. This particular graph is three-colorable.
-![Graph-COLOR](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/7b7ae6bf-060e-4fa8-bc40-f8ed1c455a27)
+![Graph-COLOR](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/1a6ea905-98fe-4e5c-aa53-7f1e76ddf7f6)
 
-        
                       [0 1 0 0 1 1 0 0 0 1]
                       [1 0 1 0 0 1 1 0 0 0]
                       [0 1 0 1 0 0 1 1 0 0]
