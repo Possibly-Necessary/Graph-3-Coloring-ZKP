@@ -1,6 +1,6 @@
 # Zero Knowldege Interactive Proof for Graph 3-Colorability in Go
 
-A (horrible/hideous, messy and incomplete) Go program that attempts to visulize/simulate the concept of Graph 3-Coloring Zero-Knowledge Interactive Proof (G3C ZKIP) discussed in this paper:
+A (horrible/hideous, messy and incomplete) Go program that attempts to visualize/simulate the concept of Graph 3-Coloring Zero-Knowledge Interactive Proof (G3C ZKIP) discussed in this paper:
 
   - "Proofs the Yeild Nothing but their Validity, or All languages in NP have Zero-Knowledge Proofs" by Goldriech, Micali & Wigderson.
     link: https://dl.acm.org/doi/10.1145/116825.116852
