@@ -14,7 +14,7 @@ Reference book(s):
 
 Testing the program: the following graph, represented in an adjacency matrix, is the common input for both the prover and verifier. This particular graph is three-colorable.
 
-        ![Graph-COLOR(1)](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/c51b7ec2-68e7-485f-851d-08869f285d04)
+  ![Graph-COLOR(1)](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/c51b7ec2-68e7-485f-851d-08869f285d04)
 
                       [0 1 0 0 1 1 0 0 0 1]
                       [1 0 1 0 0 1 1 0 0 0]
@@ -40,4 +40,14 @@ Another example:
                     map[1:3 2:1 3:3 4:1 5:2 6:2 7:2 8:2 9:3 10:1] 
 
 The coloring permutation is required for the prover to permute the color of the vertices each time the verifier asks for a randomly chosen edge, which happens next. Below is the case if the edge selected by the verifier does not belong to the set of edges in the graph which will be checked by the prover after it receives it through the channel:
+
+![Not -in-edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/b359c8e4-dc69-4be4-a3e7-5fa97cae4665)
+
+Below is the alternative case, when the prover verifies that the verifier's requested edge belong to the set of edges, and in this case, "reveales", or simply sends the coloring of the endpoints of the edge to the verifier. Finally, the verifier just checks the coloring received from the prover (through the channel) if they match:
+
+![In Edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/0f924310-844a-4b2a-86f3-765a68e8946a)
+
+
+
+
 
