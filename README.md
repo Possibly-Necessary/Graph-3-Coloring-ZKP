@@ -27,23 +27,23 @@ Testing the program: the following graph, represented in an adjacency matrix, is
                       [0 0 0 1 1 0 0 0 0 0]
                       [1 0 0 0 1 0 0 0 0 0]
 
-The prover and verifier are implemented as Go-routine functions to communicate with eachother (through a channel) concurrently. The prover function will invoke the 3-graph coloring, implemented using a backtracking algorithm, and colors the graph. The algorithm returns a certificate mapping of the vertices as the keys and their colors as the values:
+The prover and verifier are implemented as Go-routine functions to communicate concurrently through a channel. The prover function invokes the 3-graph coloring (implemented using a backtracking algorithm) and colors the graph. The algorithm generates a certificate mapping of the vertices as keys and their respective colors as values:
 
                     map[1:1 2:3 3:1 4:3 5:2 6:2 7:2 8:2 9:1 10:3] 
 
-The function that solves the 3-graph coloring returns a different (permuted) coloring for the same graph each time it's invoked. For instance, compared to the above output, running the program again yields the following coloring for the vertices:
+Note the function that solves the 3-graph coloring generates a distinct (permuted) coloring for the same graph each time it's invoked. For instance, as apposed to the above output, rerunning the program again yields the following vertex coloring:
 
                     map[1:2 2:3 3:2 4:3 5:1 6:1 7:1 8:1 9:2 10:3]
 
-Another example:
+Here's another instance:
 
                     map[1:3 2:1 3:3 4:1 5:2 6:2 7:2 8:2 9:3 10:1] 
 
-The coloring permutation is required for the prover to permute the color of the vertices each time the verifier asks for a randomly chosen edge, which happens next. Below is the case if the edge selected by the verifier does not belong to the set of edges in the graph which will be checked by the prover after it receives it through the channel:
+The coloring permutation is required for the prover to alter the color of the vertices each time the verifier asks for a randomly chosen edge. Below is the case where the edge chosen by the verifier does not belong to the set of the graph's edges, which the prover will verify upon receiving it via the channel:
 
 ![Not -in-edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/b359c8e4-dc69-4be4-a3e7-5fa97cae4665)
 
-Below is the alternative case, when the prover verifies that the verifier's requested edge belong to the set of edges, and in this case, "reveales", or simply sends the coloring of the endpoints of the edge to the verifier. Finally, the verifier just checks the coloring received from the prover (through the channel) if they match:
+Below is the alternative case, where the prover validates the verifier's edge to be a part of the graph's edge set and "reveals", or simply, sends forth the coloring of the edge's endpoints to the verifier. The verifier's next step is to check if the adjacent vertex colors (connected by his selected edge) match:
 
 ![In Edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/0f924310-844a-4b2a-86f3-765a68e8946a)
 
