@@ -31,7 +31,7 @@ The prover and verifier are implemented as Go-routine functions to communicate c
 
                     map[1:1 2:3 3:1 4:3 5:2 6:2 7:2 8:2 9:1 10:3] 
 
-Note the function that solves the 3-graph coloring generates a distinct (permuted) coloring for the same graph each time it's invoked. For instance, as apposed to the above output, rerunning the program again yields the following vertex coloring:
+Note the function that solves the 3-graph coloring generates a distinct (permuted) proper coloring for the same graph each time it's invoked. For instance, as apposed to the above output, rerunning the program again yields the following vertex coloring:
 
                     map[1:2 2:3 3:2 4:3 5:1 6:1 7:1 8:1 9:2 10:3]
 
@@ -39,11 +39,11 @@ Here's another instance:
 
                     map[1:3 2:1 3:3 4:1 5:2 6:2 7:2 8:2 9:3 10:1] 
 
-The coloring permutation is required for the prover to alter the color of the vertices each time the verifier asks for a randomly chosen edge. Below is the case where the edge chosen by the verifier does not belong to the set of the graph's edges, which the prover will verify upon receiving it via the channel:
+The coloring permutation is required for the prover to alter the color of the vertices each time the verifier asks for a randomly chosen edge. Given graph's inherent three-colorability, the backtracking algorithm will always return a proper coloring for the graph, and therefore, the prover's behaviour is naturally honest. Below is the case where the edge chosen by the verifier does not belong to the set of the graph's edges, which the prover will verify upon receiving it via the channel:
 
 ![Not -in-edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/d90b7e9e-a82e-41be-8943-f6b76f07b2e9.jpg)
 
-Below is the alternative case, where the prover validates the verifier's edge to be a part of the graph's edge set and "reveals", or simply, sends forth the coloring of the edge's endpoints to the verifier. The verifier's next step is to check if the adjacent vertex colors (connected by his selected edge) match:
+Below is the alternative case, where the prover validates the verifier's edge to be a part of the graph's edge set and "reveals", or simply, sends forth the coloring of the edge's endpoints to the verifier. The verifier's next step is to check if the adjacent vertices' colors (connected by his selected edge) match:
 
 ![In Edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/11fa5592-ac09-47ea-8679-121e0e7a65f6.jpg)
 
