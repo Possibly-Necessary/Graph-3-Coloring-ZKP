@@ -14,7 +14,7 @@ Reference book(s):
 
 Testing the program: the following graph, represented in an adjacency matrix, is the common input for both the prover and verifier. This particular graph is three-colorable.
 
-  ![Graph-COLOR(1)](C:\Users\Zahraa\Desktop\Semester Clean-Up\New folder\Graph-COLOR(1).jpg)
+  
 
                       [0 1 0 0 1 1 0 0 0 1]
                       [1 0 1 0 0 1 1 0 0 0]
