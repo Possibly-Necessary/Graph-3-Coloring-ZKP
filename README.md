@@ -39,7 +39,7 @@ Here's another instance:
 
                     map[1:3 2:1 3:3 4:1 5:2 6:2 7:2 8:2 9:3 10:1] 
 
-The coloring permutation is required for the prover to alter the color of the vertices each time the verifier asks for a randomly chosen edge. Given graph's inherent three-colorability, the backtracking algorithm will always return a proper coloring for the graph, and therefore, the prover's behaviour is naturally honest. Below is the case where the edge chosen by the verifier does not belong to the set of the graph's edges, which the prover will verify upon receiving it via the channel:
+The coloring permutation is required for the prover to alter the color of the vertices each time the verifier asks for a randomly chosen edge. Given the graph's inherent three-colorability, the backtracking algorithm will always return a proper coloring for the graph, and therefore, the prover's behaviour is naturally honest. Below is the case where the edge chosen by the verifier does not belong to the set of the graph's edges, which the prover will verify upon receiving it via the channel:
 
 ![Not -in-edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/d90b7e9e-a82e-41be-8943-f6b76f07b2e9.jpg)
 
