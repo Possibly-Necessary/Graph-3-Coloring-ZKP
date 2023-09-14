@@ -41,7 +41,7 @@ Here's another instance:
 
 The coloring permutation is required for the prover to alter the color of the vertices each time the verifier asks for a randomly chosen edge. Below is the case where the edge chosen by the verifier does not belong to the set of the graph's edges, which the prover will verify upon receiving it via the channel:
 
-![Not -in-edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/b359c8e4-dc69-4be4-a3e7-5fa97cae4665.jpg)
+![Not -in-edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/d90b7e9e-a82e-41be-8943-f6b76f07b2e9.jpg)
 
 Below is the alternative case, where the prover validates the verifier's edge to be a part of the graph's edge set and "reveals", or simply, sends forth the coloring of the edge's endpoints to the verifier. The verifier's next step is to check if the adjacent vertex colors (connected by his selected edge) match:
 
