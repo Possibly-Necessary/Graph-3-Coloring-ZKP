@@ -45,7 +45,7 @@ The coloring permutation is required for the prover to alter the color of the ve
 
 Below is the alternative case, where the prover validates the verifier's edge to be a part of the graph's edge set and "reveals", or simply, sends forth the coloring of the edge's endpoints to the verifier. The verifier's next step is to check if the adjacent vertex colors (connected by his selected edge) match:
 
-![In Edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/0f924310-844a-4b2a-86f3-765a68e8946a.jpg)
+![In Edge](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/11fa5592-ac09-47ea-8679-121e0e7a65f6.jpg)
 
 
 
