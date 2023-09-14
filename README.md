@@ -16,28 +16,28 @@ Testing the program: the following graph, represented in an adjacency matrix, is
 
  ![Graph-COLOR(1)](https://github.com/Possibly-Necessary/Graph-3-Coloring-ZKP/assets/109365947/224efc8c-6649-4fd0-bbe8-b2b427f6e316.jpg) 
 
-                      [0 1 0 0 1 1 0 0 0 1]
-                      [1 0 1 0 0 1 1 0 0 0]
-                      [0 1 0 1 0 0 1 1 0 0]
-                      [0 0 1 0 1 0 0 1 1 0]
-                      [1 0 0 1 0 0 0 0 1 1]
-                      [1 1 0 0 0 0 0 0 0 0]
-                      [0 1 1 0 0 0 0 0 0 0]
-                      [0 0 1 1 0 0 0 0 0 0]
-                      [0 0 0 1 1 0 0 0 0 0]
-                      [1 0 0 0 1 0 0 0 0 0]
+          [0 1 0 0 1 1 0 0 0 1]
+          [1 0 1 0 0 1 1 0 0 0]
+          [0 1 0 1 0 0 1 1 0 0]
+          [0 0 1 0 1 0 0 1 1 0]
+          [1 0 0 1 0 0 0 0 1 1]
+          [1 1 0 0 0 0 0 0 0 0]
+          [0 1 1 0 0 0 0 0 0 0]
+          [0 0 1 1 0 0 0 0 0 0]
+          [0 0 0 1 1 0 0 0 0 0]
+          [1 0 0 0 1 0 0 0 0 0]
 
 The prover and verifier are implemented as Go-routine functions to communicate concurrently through a channel. The prover function invokes the 3-graph coloring (implemented using a backtracking algorithm) and colors the graph. The algorithm generates a certificate mapping of the vertices as keys and their respective colors as values:
 
-                    map[1:1 2:3 3:1 4:3 5:2 6:2 7:2 8:2 9:1 10:3] 
+                map[1:1 2:3 3:1 4:3 5:2 6:2 7:2 8:2 9:1 10:3] 
 
 Note the function that solves the 3-graph coloring generates a distinct (permuted) proper coloring for the same graph each time it's invoked. For instance, as apposed to the above output, rerunning the program again yields the following vertex coloring:
 
-                    map[1:2 2:3 3:2 4:3 5:1 6:1 7:1 8:1 9:2 10:3]
+                map[1:2 2:3 3:2 4:3 5:1 6:1 7:1 8:1 9:2 10:3]
 
 Here's another instance:
 
-                    map[1:3 2:1 3:3 4:1 5:2 6:2 7:2 8:2 9:3 10:1] 
+                map[1:3 2:1 3:3 4:1 5:2 6:2 7:2 8:2 9:3 10:1] 
 
 The coloring permutation is required for the prover to alter the color of the vertices each time the verifier asks for a randomly chosen edge. Given the graph's inherent three-colorability, the backtracking algorithm will always return a proper coloring for the graph, and therefore, the prover's behaviour is naturally honest. Below is the case where the edge chosen by the verifier does not belong to the set of the graph's edges, which the prover will verify upon receiving it via the channel:
 
